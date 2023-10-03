@@ -13,3 +13,11 @@
 <div class="heading-text">{{ page.description }}</div>
 {{ page.content | safe }}
 {% endblock content %}
+{% block footer %}
+<footer>
+    <small class="subtext">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/contact">Contact Us</a>
+    </small>
+</footer>
+{% endblock footer %}
