@@ -1,0 +1,118 @@
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 767px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 1024px;
+
+// Large tablets and desktops
+$screen-xl-min: 1280px;
+
+$screen-2xl-min: 1536px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+
+.hero-container {
+  @include sm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height:100%;
+  }
+  @include md {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.hero-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include sm {
+    padding-top: 100px;
+  }
+}
+
+.hero-screenshot {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: scale-down;
+  border-radius: 30px;
+  mask-image: linear-gradient(to bottom,
+          hsla(0, 0%, 0%, 1) 70%,
+          hsla(0, 0%, 0%, 0) 100%,
+          transparent
+  );
+  -webkit-mask-image: -webkit-gradient(
+                  linear,
+                  left top, left bottom,
+                  color-stop(0.6, hsla(0, 0%, 0%, 1)),
+                  color-stop(1, hsla(0, 0%, 0%, 0)));
+  @include md {
+    height: 600px;
+  }
+}
+
+.hero-screenshot-container {
+  @include sm {
+    width: 100%;
+    padding: 20px;
+    padding-top: 40px;
+  }
+  @include md {
+    width: 35%;
+    padding: 40px;
+  }
+}
+
+.hero-primary-text {
+  text-align: center;
+}
+
+.hero-secondary-text {
+  text-align: center;
+  font-size: large;
+  padding-bottom: 20px;
+}
+

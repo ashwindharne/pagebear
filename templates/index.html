@@ -1,0 +1,44 @@
+{% extends "juice/templates/index.html" %}
+{% block head %}
+<meta charset="UTF-8">
+<meta property="og:title" content="PageBear" />
+<meta property="og:image" content="https://pagebear.co/static/logo.png" />
+{% endblock head %}
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico">
+{% endblock favicon %}
+
+
+{% block hero %}
+<link rel="stylesheet" href="/style.css">
+<div class="hero-container">
+    <div class="hero-caption">
+        <h1 class="hero-primary-text">
+            Who cares what internet strangers think?
+        </h1>
+        <h1 class="hero-secondary-text">
+            Get your reviews from people you trust.
+        </h1>
+        <a href="https://apps.apple.com/us/app/pagebear/id6461267983">
+            <img src="/app-store.svg" alt="Download on the app store">
+        </a>
+    </div>
+    <div class="hero-screenshot-container">
+        <img src="/sc.png" alt="hero" class="hero-screenshot">
+    </div>
+
+</div>
+{% endblock hero %}
+{% block toc %}
+{% endblock toc %}
+{% block content %}
+
+{% endblock content %}
+{% block footer %}
+<footer>
+    <small class="subtext">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/contact">Contact Us</a>
+    </small>
+</footer>
+{% endblock footer %}
